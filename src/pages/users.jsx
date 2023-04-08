@@ -7,9 +7,9 @@ export function UsersPage() {
   const [users, setUsers] = useState([]);
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
-  const [count, setCount] = useState(searchParams.get('page') || 5);
-  const [page, setPage] = useState(searchParams.get('page'));
-  const [offset, setOffset] = useState(searchParams.get('offset'));
+  const [count, setCount] = useState(searchParams.get('count') || 5);
+  const [page, setPage] = useState(searchParams.get('page') || 1);
+  const offset = searchParams.get('offset')
   const [totalPages, setTotalPages] = useState();
 
   let active = +page || 1;
@@ -58,14 +58,14 @@ export function UsersPage() {
           {users.map((user) => {
             return (
               <tr key={user.id}>
-                <td>{user.photo}</td>
+                <td><img src={user.photo} width='70px' height='70px'/></td>
                 <td>{user.id}</td>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>{user.phone}</td>
                 <td>{user.position}</td>
                 <td>{user.position_id}</td>
-                <td>{user.registration_timestamp} </td>
+                <td>{user.registration_timestamp}</td>
               </tr>
             );
           })}

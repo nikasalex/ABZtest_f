@@ -14,6 +14,7 @@ function App() {
       <Route path="/newUser" element={<NewUserPage />} />
       <Route path="/positions" element={<PositionsPage />} />
       <Route path="/" element={<HomePage />} />
+      <Route path="*" element={<h1>Page not found</h1>} />
     </Routes>
   );
 }
