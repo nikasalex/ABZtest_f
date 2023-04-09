@@ -6,7 +6,7 @@ export function PositionsPage() {
   const [positions, setPositions] = useState();
 
   useEffect(() => {
-    axios.get(`http://abz.mykyta-matvieiev.com:3001/positions`).then((data) => {
+    axios.get(`http://abz.mykyta-matvieiev.com:3002/positions`).then((data) => {
       setPositions(data.data.positions);
     });
   }, []);
