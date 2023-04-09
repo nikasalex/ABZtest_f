@@ -11,12 +11,12 @@ export function NewUserPage() {
   const [photo, setPhoto] = useState();
 
   function getToken() {
-    axios.get(`http://localhost:3001/token`).then((data) => {
+    axios.get(`http://abz.mykyta-matvieiev.com:3001/token`).then((data) => {
       setToken(data.data.token);
     });
   }
   useEffect(() => {
-    axios.get(`http://localhost:3001/positions`).then((data) => {
+    axios.get(`http://abz.mykyta-matvieiev.com:3001/positions`).then((data) => {
       setPositions(data.data.positions);
     });
   }, []);
@@ -38,7 +38,7 @@ export function NewUserPage() {
       formData.append('photo', photo);
       formData.append('position_id', values.position_id);
       axios
-        .post(`http://localhost:3001/users`, formData, {
+        .post(`http://abz.mykyta-matvieiev.com:3001/users`, formData, {
           headers: { token: token, 'Content-Type': 'multipart/form-data' },
         })
         .then((data) => {

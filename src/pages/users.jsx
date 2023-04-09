@@ -31,7 +31,7 @@ export function UsersPage() {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:3001/users?count=${count}&page=${page}&offset=${offset}`
+        `http://abz.mykyta-matvieiev.com:3001/users?count=${count}&page=${page}&offset=${offset}`
       )
       .then((data) => {
         setUsers(data.data.users);

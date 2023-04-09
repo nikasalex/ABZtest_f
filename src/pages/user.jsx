@@ -8,7 +8,7 @@ export function UserPage() {
   const location = useLocation();
   const userId = location.pathname.split('users/')[1];
   useEffect(() => {
-    axios.get(`http://localhost:3001/users/${userId}`).then((data) => {
+    axios.get(`http://abz.mykyta-matvieiev.com:3001/users/${userId}`).then((data) => {
       setUser(data.data.user);
     });
   }, []);
